@@ -1,7 +1,6 @@
 // src/worker.js
 import { connect } from "cloudflare:sockets";
 let sha224Password = '08f32643dbdacf81d0d511f1ee24b06de759e90f8edf742bbdc57d88';
-let userID = 'd342d11e-d424-4583-b36e-524ab1f0afa4';
 
 const proxyIPs = ['bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org', 'workers.cloudflare.cyou'];
 
