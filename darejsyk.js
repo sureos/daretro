@@ -3,7 +3,7 @@ import { connect } from "cloudflare:sockets";
 
 let Pswd = 'trojan';
 const proxyIPs = ['bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org', 'workers.cloudflare.cyou']; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
-let hostnames = ['viaplay.no','www.kode24.no','sol.no'];
+let hostnames = ['www.kode24.no'];
 
 let sha224Password ;
 // if you want to use ipv6 or single proxyIP, please add comment at this line and remove comment at the next line
@@ -12,8 +12,6 @@ let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 // let proxyIP = 'cdn.xn--b6gac.eu.org';
 // ipv6 proxyIP example remove comment to use
 // let proxyIP = "[2a01:4f8:c2c:123f:64:5:6810:c55a]"
-
-let hostnames = hostnames[Math.floor(Math.random() * proxyIPs.length)];
 
 let dohURL = 'https://doh.opendns.com/dns-query'; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
 
