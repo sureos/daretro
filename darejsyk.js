@@ -3,7 +3,7 @@ import { connect } from "cloudflare:sockets";
 
 let Pswd = 'trojan';
 const proxyIPs = ["cdn.xn--b6gac.eu.org"]; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
-let hostnames = [''];
+let hostnames = ['viaplay.no'];
 
 let sha224Password ;
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
