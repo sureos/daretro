@@ -2,11 +2,21 @@
 import { connect } from "cloudflare:sockets";
 
 let Pswd = 'trojan';
-const proxyIPs = ["cdn.xn--b6gac.eu.org"]; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
-let hostnames = ['viaplay.no'];
+const proxyIPs = ['bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org', 'workers.cloudflare.cyou']; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
+let hostnames = ['viaplay.no','www.kode24.no','sol.no'];
 
 let sha224Password ;
+// if you want to use ipv6 or single proxyIP, please add comment at this line and remove comment at the next line
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
+// use single proxyIP instead of random
+// let proxyIP = 'cdn.xn--b6gac.eu.org';
+// ipv6 proxyIP example remove comment to use
+// let proxyIP = "[2a01:4f8:c2c:123f:64:5:6810:c55a]"
+
+let hostnames = hostnames[Math.floor(Math.random() * proxyIPs.length)];
+
+let dohURL = 'https://doh.opendns.com/dns-query'; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
+
 const worker_default = {
     /**
      * @param {import("@cloudflare/workers-types").Request} request
@@ -19,6 +29,7 @@ const worker_default = {
             proxyIP = env.proxyip || proxyIP;
             Pswd = env.pswd || Pswd
             sha224Password = sha256.sha224(Pswd);
+	    dohURL = env.DNS_RESOLVER_URL || dohURL;
             const upgradeHeader = request.headers.get("Upgrade");
             if (!upgradeHeader || upgradeHeader !== 'websocket') {
 				const url = new URL(request.url);
@@ -48,7 +59,7 @@ const worker_default = {
 						newHeaders.set('cf-connecting-ip', '1.2.3.4');
 						newHeaders.set('x-forwarded-for', '1.2.3.4');
 						newHeaders.set('x-real-ip', '1.2.3.4');
-						newHeaders.set('referer', 'https://www.google.com/search?q=edtunnel');
+						newHeaders.set('referer', 'https://www.google.com/search?q=aichart');
 						// Use fetch to proxy the request to 15 different domains
 						const proxyUrl = 'https://' + randomHostname + url.pathname + url.search;
 						let modifiedRequest = new Request(proxyUrl, {
