@@ -373,7 +373,7 @@ export {
 function gettrojanConfig(Pswd, hostName) {
 	const wtrojanws = `trojan://${Pswd}\u0040bws.com.au:8880?security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2560#${hostName}`;
 	const ptrojanwstls = `trojan://${Pswd}\u0040bws.com.au:8443?security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2560#${hostName}`;
-    const note = `\n\n\n正在使用的ProxyIP：${proxyIP}`;
+    const note = `正在使用的ProxyIP：${proxyIP}`;
   
     if (hostName.includes('pages.dev')) {
     return `
