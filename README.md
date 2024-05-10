@@ -22,5 +22,5 @@
 | 2、能上CF类网站 | proxyip |ipv4地址、域名、[ipv6地址]|proxyip域名：cdn.xn--b6gac.eu.org|
 
 ---------------------------------
-### ：查看相关分享链接（单节点，非订阅）
-#### CF Trojan分享链接，在网页输入：https:// workers域名 或者 pages域名 或者 自定义域名/自定义密码
+### 查看相关分享链接（单节点，非订阅）
+CF Trojan分享链接，在网页输入：https:// workers域名 或者 pages域名 或者 自定义域名/自定义密码
