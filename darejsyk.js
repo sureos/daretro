@@ -2,7 +2,7 @@
 import { connect } from "cloudflare:sockets";
 
 let Pswd = 'trojan';
-const proxyIPs = ['eu.cmbaby.mom','usa.cmbaby.mom','bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org', 'workers.cloudflare.cyou']; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
+const proxyIPs = ['eu.cmbaby.mom','usa.cmbaby.mom','bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org']; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
 let hostnames = ['www.kode24.no'];
 
 let sha224Password ;
