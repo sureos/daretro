@@ -2,7 +2,7 @@
 import { connect } from "cloudflare:sockets";
 let sha224Password = '08f32643dbdacf81d0d511f1ee24b06de759e90f8edf742bbdc57d88';
 
-const proxyIPs = ['eu.cmbaby.mom','usa.cmbaby.mom','bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org', 'workers.cloudflare.cyou'];
+const proxyIPs = ['eu.cmbaby.mom','usa.cmbaby.mom','bestproxy.onecf.eu.org','cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'cdn.anycast.eu.org'];
 
 // if you want to use ipv6 or single proxyIP, please add comment at this line and remove comment at the next line
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
